@@ -278,9 +278,6 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-/* Add this to index.html head */
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -311,4 +308,143 @@ body {
   border-radius: 4px;
   margin-top: 1rem;
 }
+/* CSS-Tricks Inspired Footer */
+.site-footer {
+    background: #2A5C82;
+    color: white;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-heading {
+    color: #F5A623;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-social {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+/* CSS-Tricks Inspired Sidebar */
+.main-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.content {
+    flex: 1;
+    min-width: 0; /* Prevent overflow */
+}
+
+.sidebar {
+    width: 300px;
+    padding-left: 2rem;
+    border-left: 1px solid #e2e8f0;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-heading {
+    color: #2A5C82;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #F5A623;
+}
+
+.sidebar-links li {
+    margin-bottom: 0.8rem;
+}
+
+.sidebar-links a {
+    color: #444;
+    text-decoration: none;
+}
+
+.sidebar-links a:hover {
+    color: #2A5C82;
+    text-decoration: underline;
+}
+
+.sidebar-newsletter input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-newsletter button {
+    background: #F5A623;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 2rem;
+    }
+}
+
 
