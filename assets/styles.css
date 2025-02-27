@@ -518,11 +518,11 @@ p {
 /* Benefits Grid Fix */
 .benefits-grid {
     display: grid;
-    text-align: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-    padding: 2.5rem;
+    text-align: center;
+  padding: 4rem 1rem;
 }
 
 /* Pricing Section Fix */
