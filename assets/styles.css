@@ -452,12 +452,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Section Spacing */
-section {
-    margin: 4rem 0;
-    padding: 2rem 0;
-}
-
 /* Hero Section Fix */
 .hero {
     margin-top: -2rem; /* Remove gap after nav */
