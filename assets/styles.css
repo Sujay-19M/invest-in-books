@@ -110,8 +110,6 @@ body {
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
 }
 
 .price-card {
