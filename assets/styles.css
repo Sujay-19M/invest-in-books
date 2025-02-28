@@ -525,3 +525,33 @@ body {
     margin: 0 auto;
 }
 
+/* Add these new rules at the end of your CSS */
+.marketing-guide {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.guide-content {
+    text-align: left;
+}
+
+.guide-list {
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.guide-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.guide-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+/* Keep all existing CSS below */
