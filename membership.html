@@ -1,101 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <div id="header"></div>
 <head>
+    <!-- HEADER DIV WAS INCORRECTLY PLACED HERE - MOVED TO BODY -->
     <title>Become a Member - Invest In Books</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* IMPROVED CSS ORGANIZATION */
+        :root {
+            --primary-blue: #1e3a8a;
+            --hover-blue: #1c2e63;
+            --background: #f9f9f9;
+            --card-bg: #fff;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background-color: var(--background);
             color: #333;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
         .content-container {
-            background-color: #fff;
+            background-color: var(--card-bg);
             max-width: 800px;
             margin: 50px auto;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
         }
+
         h1, h2 {
             text-align: center;
-            color: #1e3a8a;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
         }
+
         .membership-intro {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 2rem;
             font-size: 1.1em;
             color: #555;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        /* IMPROVED FORM STYLING */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
         }
+
         label {
             font-weight: bold;
-            margin-bottom: 6px;
+            margin-bottom: 0.5rem;
             display: block;
+            color: var(--primary-blue);
         }
+
         input, select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
         }
+
+        input:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+
         .plan-options {
             display: flex;
-            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
+
         .plan-options label {
             background-color: #f0f4ff;
-            padding: 15px;
+            padding: 1.5rem;
             border-radius: 8px;
             cursor: pointer;
             flex: 1;
-            margin: 0 5px;
+            min-width: 250px;
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
-        .plan-options input {
-            display: none;
-        }
-        .plan-options label:hover {
-            background-color: #c3dafe;
-        }
+
         .plan-options input:checked + label {
-            background-color: #1e3a8a;
+            background-color: var(--primary-blue);
             color: white;
-            font-weight: bold;
+            border-color: var(--primary-blue);
         }
+
         .cta-btn {
-            background-color: #1e3a8a;
+            background-color: var(--primary-blue);
             color: white;
-            padding: 12px 20px;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
-            font-size: 1em;
+            font-size: 1.1em;
             transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
         }
+
         .cta-btn:hover {
-            background-color: #1c2e63;
+            background-color: var(--hover-blue);
         }
+
         .note {
             text-align: center;
-            margin-top: 15px;
+            margin-top: 1.5rem;
             font-size: 0.9em;
+            color: #666;
+        }
+
+        .note a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .note a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .plan-options {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- CORRECT HEADER PLACEMENT -->
     <div id="header"></div>
 
     <div class="content-container">
         <h1>Join Our Exclusive Membership</h1>
-        <p class="membership-intro">Become part of our growing community and unlock special resources, personalized recommendations, and exclusive member-only benefits.</p>
+        <p class="membership-intro">
+            Unlock premium benefits including priority ISBN allocation, 
+            discounted publishing rates, and expert marketing guidance.
+        </p>
 
         <form action="/submit-membership" method="POST">
             <div class="form-group">
@@ -105,36 +167,50 @@
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your best email" required>
+                <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
             </div>
 
             <div class="form-group">
                 <label>Select Your Plan</label>
                 <div class="plan-options">
                     <input type="radio" id="basic" name="plan" value="basic" required>
-                    <label for="basic">Basic - ₹499/year</label>
+                    <label for="basic">
+                        <strong>Basic Plan</strong><br>
+                        ₹499/year<br>
+                        ₹59 per book
+                    </label>
 
                     <input type="radio" id="premium" name="plan" value="premium">
-                    <label for="premium">Premium - ₹1599/year</label>
+                    <label for="premium">
+                        <strong>Premium Plan</strong><br>
+                        ₹1599/year<br>
+                        Unlimited Publishing
+                    </label>
                 </div>
             </div>
 
-            <button type="submit" class="cta-btn">Proceed to Payment</button>
+            <button type="submit" class="cta-btn">Start Publishing Journey</button>
         </form>
 
-        <p class="note">Already a member? <a href="/login">Log in here</a></p>
+        <p class="note">
+            Already a member? <a href="/login">Access your account here</a><br>
+            Need help? <a href="/contact">Contact our support team</a>
+        </p>
     </div>
-    <script>
-    // Load Header
-    fetch('/header.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('header').innerHTML = data);
 
-    // Load Footer
-    fetch('/footer.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
-</script>
-     <div id="footer"></div>
+    <div id="footer"></div>
+
+    <!-- ADD THIS SCRIPT TO LOAD HEADER/FOOTER -->
+    <script>
+        // Load Header
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+
+        // Load Footer
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
 </body>
 </html>
