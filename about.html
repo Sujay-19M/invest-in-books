@@ -2,26 +2,130 @@
 <html lang="en">
 <head>
     <title>About Us - Invest In Books</title>
-    <meta name="description" content="Learn more about Invest In Books, our story, and our publishing services.">
-    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link your existing CSS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Optional Inline CSS for Enhancement */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            color: #555;
+            line-height: 1.8;
+        }
+        .about-section {
+            margin-bottom: 40px;
+        }
+        .about-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .about-card {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        .about-card i {
+            font-size: 36px;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #3498db;
+        }
+        .section-title {
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>About Invest In Books</h1>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="blog/">Blog</a>
-        </nav>
-    </header>
+    <div id="header"></div>
 
     <main>
-        <h2>Our Story</h2>
-        <p>Invest In Books was founded to help book lovers discover new reads and offer authors affordable publishing services.</p>
+        <div class="content-container">
+            <h1 class="page-heading">About <span class="highlight">Invest In Books</span></h1>
+
+            <section class="about-section">
+                <div class="about-content">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p>At <strong>Invest In Books</strong>, we believe that books are more than just stories or information — they are powerful investments in personal growth, intellectual wealth, and lifelong learning. Our platform is dedicated to helping readers, learners, and book enthusiasts discover valuable books that inspire, educate, and enrich their lives.</p>
+
+                    <h2 class="section-title">What We Offer</h2>
+                    <p>We bring together curated recommendations, in-depth reviews, reading guides, and expert insights to help you make informed reading decisions. Whether you’re building your personal library or searching for books that add lasting value, we’re here to guide you.</p>
+
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <i class="fas fa-book"></i>
+                            <h3>Curated Recommendations</h3>
+                            <p>Handpicked lists covering every genre and interest.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-star"></i>
+                            <h3>Expert Reviews</h3>
+                            <p>Honest, unbiased opinions from our book experts.</p>
+                        </div>
+                        <div class="about-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Reading Guides</h3>
+                            <p>Tailored book plans and thematic collections.</p>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Our Vision</h2>
+                    <p>We envision <strong>Invest In Books</strong> as the go-to destination where books are not only read, but also valued as intellectual assets. Whether you are a lifelong learner, a casual reader, or a knowledge seeker, we help you invest your time and money into books that truly matter.</p>
+
+                    <h2 class="section-title">Why Invest in Books?</h2>
+                    <p>Books offer more than knowledge — they unlock creativity, broaden perspectives, and sharpen critical thinking. We believe that every book you read adds value to your personal library and strengthens your intellectual capital, making it one of the most rewarding investments in life.</p>
+
+                    <h2 class="section-title">Our Commitment</h2>
+                    <p>We are committed to maintaining high-quality content, providing authentic recommendations, and continually evolving to meet the needs of our growing community. Whether it's discovering timeless classics or exploring emerging authors, we ensure every reader finds their perfect book investment.</p>
+
+                    <p><strong>Invest in knowledge. Invest in growth. Invest in books.</strong></p>
+                </div>
+            </section>
+
+            <section class="team-section">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p>Behind <strong>Invest In Books</strong> is a passionate team of literary experts, editors, and content curators who share a deep love for books and a strong belief in the power of reading.</p>
+                <!-- Add your team member cards here if needed -->
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <p>© 2025 Invest In Books. All Rights Reserved.</p>
-    </footer>
+    <div id="footer"></div>
+
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+
+        fetch('/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    </script>
 </body>
 </html>
