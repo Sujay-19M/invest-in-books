@@ -524,3 +524,39 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
+
+/* Marketing Guide Fixes */
+.marketing-guide {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.guide-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.guide-list {
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.guide-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #1A3654;
+}
+
+.guide-list li::before {
+    content: "▸";
+    color: #F5A623;
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+}
