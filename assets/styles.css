@@ -538,18 +538,16 @@ body {
     padding: 3rem;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: left;
 }
 
 .guide-list {
-    padding-left: 2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    padding-left: 1rem;
 }
 
 .guide-list li {
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-    position: relative;
-    padding-left: 1.5rem;
+    margin-bottom: 1rem;
     color: #1A3654;
+    line-height: 1.6;
 }
-
