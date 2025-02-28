@@ -75,14 +75,30 @@
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .footer-heading {
     color: #F5A623;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    width: 100%;
+    text-align: left;
 }
 
 .footer-links li {
     margin-bottom: 0.8rem;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
 }
 
 .footer-links a {
@@ -90,7 +106,6 @@
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
     color: white;
     text-decoration: underline;
