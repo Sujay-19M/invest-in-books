@@ -1,11 +1,52 @@
-<nav class="main-nav">
-    <div class="nav-container">
-        <a href="/" class="logo">Invest In Books</a>
-        <div class="nav-links">
-            <a href="/about">About</a>
-            <a href="/membership">Membership</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
+<!-- Website Header - Appears on Every Page -->
+<header>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                📘 Invest In Books
+            </a>
+            
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/membership.html">Membership</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact.html">Contact</a>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    
+    <style>
+        /* Header Styles */
+        .main-nav {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #2A5C82;
+        }
+        
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .nav-links a:hover {
+            color: #F5A623;
+        }
+    </style>
+</header>
