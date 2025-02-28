@@ -553,10 +553,3 @@ body {
     color: #1A3654;
 }
 
-.guide-list li::before {
-    content: "▸";
-    color: #F5A623;
-    position: absolute;
-    left: 0;
-    font-weight: 700;
-}
