@@ -1,155 +1,129 @@
-<!-- Add to your existing structure -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <!-- Add your existing head content here -->
+    <title>Become a Member - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --body-bg: #f5f5f5; /* Ash color background */
-            --content-bg: #ffffff; /* White content area */
-            --primary-color: #2A5C82; /* Professional blue */
-            --accent-color: #F5A623; /* Warm accent color */
-        }
-
-        /* Base Body Styling */
         body {
-            background-color: var(--body-bg);
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
             margin: 0;
-            padding: 40px 0;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            padding: 0;
         }
-
-        /* Main Content Container */
-        .main-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: var(--content-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 40px;
-        }
-
-        /* Section Styling */
-        section {
-            margin: 50px 0;
-            padding: 30px 0;
-        }
-
-        /* Typography */
-        h2 {
-            color: var(--primary-color);
-            font-size: 2.2em;
-            margin-bottom: 1.5em;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            font-size: 1.6em;
-            margin-bottom: 1em;
-        }
-
-        /* Benefits Grid */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .benefit-card {
-            background: #fff;
+        .content-container {
+            background-color: #fff;
+            max-width: 800px;
+            margin: 50px auto;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
+        h1, h2 {
+            text-align: center;
+            color: #1e3a8a;
         }
-
-        /* Book-themed Elements */
-        .book-icon {
-            font-size: 2em;
+        .membership-intro {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .form-group {
             margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 6px;
             display: block;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-container {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            section {
-                margin: 30px 0;
-                padding: 20px 0;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        .plan-options {
+            display: flex;
+            justify-content: space-between;
+        }
+        .plan-options label {
+            background-color: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .plan-options input {
+            display: none;
+        }
+        .plan-options label:hover {
+            background-color: #c3dafe;
+        }
+        .plan-options input:checked + label {
+            background-color: #1e3a8a;
+            color: white;
+            font-weight: bold;
+        }
+        .cta-btn {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .cta-btn:hover {
+            background-color: #1c2e63;
+        }
+        .note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <!-- Your existing nav content -->
-    </nav>
+    <div id="header"></div>
 
-    <main class="main-container">
-        <!-- Hero Section -->
-        <section class="hero">
-            
-            <!-- Hero content -->
-        </section>
+    <div class="content-container">
+        <h1>Join Our Exclusive Membership</h1>
+        <p class="membership-intro">Become part of our growing community and unlock special resources, personalized recommendations, and exclusive member-only benefits.</p>
 
-        <!-- Benefits Section -->
-        <section class="benefits">
-            <h1>📘 Start Your Publishing Journey</h1>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h2>📘 Publish Your Book Professionally</h2>
-                    <section class="membership-form">
-    <form action="/submit-membership" method="POST">
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-            <label>Choose Plan</label>
-            <div class="plan-options">
-                <label>
-                    <input type="radio" name="plan" value="basic" required>
-                    Basic (₹499/year)
-                </label>
-                <label>
-                    <input type="radio" name="plan" value="premium" required>
-                    Premium (₹1599/year)
-                </label>
+        <form action="/submit-membership" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
             </div>
-        </div>
 
-        <button type="submit" class="cta-btn">Continue to Payment</button>
-    </form>
-        </section>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your best email" required>
+            </div>
 
-        <!-- Other sections -->
-    </main>
+            <div class="form-group">
+                <label>Select Your Plan</label>
+                <div class="plan-options">
+                    <input type="radio" id="basic" name="plan" value="basic" required>
+                    <label for="basic">Basic - ₹499/year</label>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <!-- Your footer content -->
-    </footer>
+                    <input type="radio" id="premium" name="plan" value="premium">
+                    <label for="premium">Premium - ₹1599/year</label>
+                </div>
+            </div>
+
+            <button type="submit" class="cta-btn">Proceed to Payment</button>
+        </form>
+
+        <p class="note">Already a member? <a href="/login">Log in here</a></p>
+    </div>
+
+    <div id="footer"></div>
 </body>
 </html>
