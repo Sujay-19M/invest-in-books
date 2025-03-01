@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Printing - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">Book <span class="highlight">Printing</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">High-Quality Book Printing Services</h2>
+                <p>At <strong class="highlight">Invest In Books</strong>, we offer premium book printing services tailored for self-published authors and independent publishers. Whether you need paperback novels, hardcover editions, or custom-sized books, our printing solutions are designed to bring your vision to life.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Why Choose Our Printing Services?</h2>
+                <ul class="payment-methods">
+                    <li>✅ High-quality paper and durable binding</li>
+                    <li>✅ Flexible print runs — from small batches to bulk orders</li>
+                    <li>✅ Multiple sizes and formats (A5, 6x9, 8.5x11, and more)</li>
+                    <li>✅ Sharp printing with vibrant colors and crisp text</li>
+                    <li>✅ Competitive pricing for authors and publishers</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Types of Books We Print</h2>
+                <ul class="payment-methods">
+                    <li>📚 Fiction & Non-fiction Books</li>
+                    <li>📚 Poetry Collections</li>
+                    <li>📚 Academic & Reference Books</li>
+                    <li>📚 Children’s Books</li>
+                    <li>📚 Workbooks, Journals, and Planners</li>
+                    <li>📚 Coffee Table Books</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Custom Printing Options</h2>
+                <p>We understand every book is unique, which is why we offer fully customizable options:</p>
+                <ul class="payment-methods">
+                    <li>📌 Cover Options: Matte, Glossy, Laminated</li>
+                    <li>📌 Binding Options: Paperback, Hardcover, Spiral Binding</li>
+                    <li>📌 Paper Quality: 70 GSM to 170 GSM (White & Cream)</li>
+                    <li>📌 Full-Color or Black & White Printing</li>
+                    <li>📌 Custom Trim Sizes Available</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Printing Process</h2>
+                <p>Our process ensures quality and speed:</p>
+                <ol class="payment-methods">
+                    <li>📥 Submit your print-ready manuscript (PDF preferred).</li>
+                    <li>🎨 Choose your printing options (size, paper, cover type, etc.).</li>
+                    <li>💳 Complete payment.</li>
+                    <li>🚚 Receive your printed books within 7-10 working days.</li>
+                </ol>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Pricing</h2>
+                <p>Printing costs vary based on quantity, paper quality, and book size. Contact us for a personalized quote.</p>
+                <p>For quick estimates, you can also visit our <a href="/print-calculator">Online Print Cost Calculator</a>.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Why Invest In Books?</h2>
+                <p>We combine years of publishing expertise with state-of-the-art printing technology to deliver books that authors are proud of. From single copies to large print runs, our commitment to quality never changes.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Get Started Today!</h2>
+                <p>Ready to print your book? <a href="/contact">Contact us</a> today or email at <a href="mailto:support@investinbooks.in">support@investinbooks.in</a> to get a quote or discuss your requirements.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
