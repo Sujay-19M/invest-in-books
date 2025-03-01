@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Submit Manuscript - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">Submit Your <span class="highlight">Manuscript</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">Ready to Publish Your Book?</h2>
+                <p>We are excited to be part of your publishing journey! Use this form to submit your manuscript directly to our editorial team. We will review your submission and get back to you with the next steps within 48 hours.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Manuscript Submission Form</h2>
+                <form action="submit-manuscript-handler.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="authorName">Author Name <span class="required">*</span></label>
+                        <input type="text" id="authorName" name="authorName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookTitle">Book Title <span class="required">*</span></label>
+                        <input type="text" id="bookTitle" name="bookTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre">Genre <span class="required">*</span></label>
+                        <select id="genre" name="genre" required>
+                            <option value="">-- Select Genre --</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="non-fiction">Non-fiction</option>
+                            <option value="poetry">Poetry</option>
+                            <option value="biography">Biography</option>
+                            <option value="self-help">Self-Help</option>
+                            <option value="children">Children's Book</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="manuscriptFile">Upload Manuscript (PDF/Word) <span class="required">*</span></label>
+                        <input type="file" id="manuscriptFile" name="manuscriptFile" accept=".pdf, .doc, .docx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalNotes">Additional Notes (Optional)</label>
+                        <textarea id="additionalNotes" name="additionalNotes" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Submit Manuscript</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">What Happens Next?</h2>
+                <ul class="payment-methods">
+                    <li>✔️ Our editorial team will review your manuscript.</li>
+                    <li>✔️ You’ll receive a confirmation email within 24-48 hours.</li>
+                    <li>✔️ We’ll discuss your publishing goals & suggest suitable packages.</li>
+                    <li>✔️ Once confirmed, we begin the publishing process.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Need Assistance?</h2>
+                <p>If you have any questions or need help with the form, <a href="/contact">Contact Us</a> and our team will assist you.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .form-group {
+            margin: 1rem 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .submit-btn {
+            background-color: #F5A623;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #e59420;
+        }
+        .required {
+            color: red;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
