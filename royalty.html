@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Royalty Management - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">Royalty <span class="highlight">Management</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">Effortless Royalty Management for Authors</h2>
+                <p>At <strong class="highlight">Invest In Books</strong>, we believe authors deserve full transparency and control over their earnings. Our <strong>Royalty Management</strong> service ensures you receive clear, timely, and accurate royalty reports — so you always know how much your book is earning.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">What Our Royalty Service Covers</h2>
+                <ul class="payment-methods">
+                    <li>📊 Real-Time Sales Tracking</li>
+                    <li>📊 Monthly & Quarterly Royalty Statements</li>
+                    <li>📊 Earnings Breakdown by Platform (Amazon, Flipkart, Google Books, etc.)</li>
+                    <li>📊 Transparent Commission Structure</li>
+                    <li>📊 Assistance with Tax Documentation (TDS Certificates, if applicable)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">How We Calculate Your Royalties</h2>
+                <p>Your royalty earnings depend on factors such as book price, sales channel, and region. Here’s an example of how it works:</p>
+                <ul class="payment-methods">
+                    <li>💰 Sale Price: ₹300</li>
+                    <li>💰 Platform Fees (Amazon, Flipkart, etc.): ₹60</li>
+                    <li>💰 Printing & Distribution Cost: ₹80</li>
+                    <li>💰 Net Royalty: ₹160 per sale</li>
+                </ul>
+                <p>We ensure you receive maximum possible earnings by optimizing pricing and choosing cost-effective distribution partners.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Royalty Payment Schedule</h2>
+                <p>Royalties are processed and paid to authors as per the following schedule:</p>
+                <ul class="payment-methods">
+                    <li>📅 Monthly Payouts (for sales above ₹500)</li>
+                    <li>📅 Quarterly Payouts (for sales below ₹500)</li>
+                    <li>📅 Payments directly to your bank account (Indian authors) or via PayPal (International authors)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Author Dashboard Access</h2>
+                <p>Every author gets access to their personalized <strong class="highlight">Author Dashboard</strong> — a secure online portal where you can:</p>
+                <ul class="payment-methods">
+                    <li>📈 Track Daily & Monthly Sales</li>
+                    <li>📈 Download Royalty Reports</li>
+                    <li>📈 Monitor Performance Across Platforms</li>
+                    <li>📈 Update Bank/Payment Details</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Global & Domestic Sales Coverage</h2>
+                <p>We track royalties from all sales channels, including:</p>
+                <ul class="payment-methods">
+                    <li>🌍 India: Amazon India, Flipkart, Notion Press Store</li>
+                    <li>🌍 International: Amazon Global, Apple Books, Kobo, Google Play Books</li>
+                    <li>🌍 Direct Sales via Your Author Website</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Why Trust Us for Royalty Management?</h2>
+                <p>With <strong class="highlight">Invest In Books</strong>, you get:</p>
+                <ul class="payment-methods">
+                    <li>✅ 100% Transparent Accounting</li>
+                    <li>✅ No Hidden Deductions</li>
+                    <li>✅ Complete Sales Data Access</li>
+                    <li>✅ Support for GST, TDS & Tax Documentation</li>
+                    <li>✅ Dedicated Author Support Team</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Get Started Today</h2>
+                <p>Ready to take full control of your book earnings? Join <strong class="highlight">Invest In Books</strong> and experience stress-free royalty management.</p>
+                <p><a href="/contact">Contact Us</a> to learn more or sign up for our Author Services today.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
