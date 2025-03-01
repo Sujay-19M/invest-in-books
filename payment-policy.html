@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Policy - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading">Payment <span class="highlight">Policy</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">Payment Process</h2>
+                <p>At <strong class="highlight">Invest In Books</strong>, we ensure a "transparent and secure payment process" for all our publishing services. Once you select your desired publishing package or service, you will be guided through the "payment gateway" for hassle-free online transactions.</p>
+                
+                <p>We accept the following payment methods:</p>
+                <ul class="payment-methods">
+                    <li>✅ UPI Payments (Google Pay, PhonePe, Paytm, etc.)</li>
+                    <li>✅ Debit/Credit Cards (Visa, MasterCard, RuPay)</li>
+                    <li>✅ Wallet Payments</li>
+                    <li>✅ Net Banking</li>
+                    <li>✅ Razorpay<li>
+                    <li>✅ PayPal<li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Payment Confirmation</h2>
+                <p>Once your payment is successfully completed, you will receive an "instant confirmation email" with your transaction ID, service details, and the official invoice. Please ensure your email address is entered correctly during registration.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Currency & Charges</h2>
+                <p>All transactions are processed in "INR (Indian Rupees)" unless explicitly stated. For international authors, currency conversion charges (if any) will be applied by your bank or payment provider.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Refunds & Cancellations</h2>
+                <p>Payments made for publishing services are "non-refundable" once the process has started. Authors are encouraged to thoroughly review their service selection and contact our team for any clarifications "before making a payment".</p>
+                <p>For detailed refund terms, please check our <a href="/refund-policy">Refund Policy</a>.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Need Assistance?</h2>
+                <p>If you encounter any "payment-related issues" or require further support, feel free to reach out to us via our <a href="/contact">Contact Page</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
