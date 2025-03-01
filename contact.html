@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - Invest in Books</title>
+    <meta name="description" content="Contact Invest in Books for professional publishing support and guidance.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <main class="content-container">
+        <h1 class="page-title">📞 Contact Us</h1>
+        <p class="intro">Have questions or need help? Reach out to our friendly team. Whether you’re a first-time author or experienced publisher, we’re here to guide you.</p>
+
+        <section class="contact-info">
+            <p><strong>Email:</strong> support@investinbooks.com</p>
+            <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+            <p><strong>Working Hours:</strong> Monday to Saturday, 10:00 AM - 6:00 PM (IST)</p>
+        </section>
+
+        <form action="https://formspree.io/f/yourformID" method="POST" class="contact-form">
+            <label>Your Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Your Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Your Message:</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer"></div>
+
+    <script>
+        fetch('header.html').then(res => res.text()).then(data => document.getElementById('header-placeholder').innerHTML = data);
+        fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>
