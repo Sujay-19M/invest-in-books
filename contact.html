@@ -1,174 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>About Us - Your Website Name</title>
+    <title>Contact Us - Invest In Books</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        /* Color and font scheme */
         :root {
-            --primary-color: #0056b3;
-            --accent-color: #ff9800;
-            --text-color: #333;
-            --background-color: #f9f9f9;
-            --card-bg: #fff;
-            --shadow: rgba(0, 0, 0, 0.1);
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
         }
-
         body {
             font-family: 'Arial', sans-serif;
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
+            background-color: var(--background);
             color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
         }
-
-        .content-wrapper {
+        .content-container {
             max-width: 1100px;
-            margin: 3rem auto;
+            margin: 2rem auto;
             padding: 2rem;
-            background: var(--card-bg);
-            box-shadow: 0 4px 20px var(--shadow);
-            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
         }
-
-        h1, h2, h3 {
+        h1 {
+            text-align: center;
             color: var(--primary-color);
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
-        .page-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+        .contact-details, .contact-form {
+            margin: 2rem 0;
+        }
+        .contact-details p, .contact-details a {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            color: var(--text-color);
+        }
+        .contact-details a {
             color: var(--primary-color);
-        }
-
-        p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlight {
-            color: var(--accent-color);
+            text-decoration: none;
             font-weight: bold;
         }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .contact-details a:hover {
+            text-decoration: underline;
         }
-
-        .info-card {
-            padding: 1.5rem;
-            background-color: var(--card-bg);
-            box-shadow: 0 2px 10px var(--shadow);
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
+        .contact-form label {
+            font-weight: bold;
         }
-
-        .info-card:hover {
-            transform: translateY(-5px);
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
         }
-
-        .info-card i {
-            font-size: 2.5rem;
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .contact-form button:hover {
+            background-color: var(--accent-color);
+        }
+        .contact-icons i {
+            font-size: 1.5rem;
             color: var(--accent-color);
-            margin-bottom: 0.5rem;
+            margin-right: 0.5rem;
         }
-
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .content-wrapper {
-                padding: 1.5rem;
-                margin: 1rem;
-            }
-
-            .page-title {
-                font-size: 2rem;
+            .content-container {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
+    <div id="header"></div>
 
-<div id="header"></div>
+    <main>
+        <div class="content-container">
+            <h1>Contact <span style="color: var(--accent-color);">Invest In Books</span></h1>
+            
+            <section class="contact-details">
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:support@investinbooks.com">support@investinbooks.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: Office 305, Writer's Hub Tower, New Delhi - 110001, India</p>
+                <p><i class="fas fa-users"></i> For Membership Queries: <a href="mailto:membership@investinbooks.com">membership@investinbooks.com</a> (Recommended to connect before applying for membership)</p>
+            </section>
 
-<main>
-    <div class="content-wrapper">
-        <h1 class="page-title">About <span class="highlight">Your Website Name</span></h1>
+            <section class="contact-form">
+                <h2 style="color: var(--primary-color);">Send Us a Message</h2>
+                <form action="https://formspree.io/f/your_form_id_here" method="POST">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
 
-        <section>
-            <h2>Who We Are</h2>
-            <p>Welcome to <strong class="highlight">Your Website Name</strong>, your trusted platform for [short tagline about what your site offers]. Our mission is to provide high-quality [product/service] to our audience, ensuring both excellence and affordability.</p>
-        </section>
+    <div id="footer"></div>
 
-        <section>
-            <h2>Our Core Values</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Mission-Driven</h3>
-                    <p>Everything we do is focused on delivering value to our users.</p>
-                </div>
-
-                <div class="info-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Trust & Transparency</h3>
-                    <p>We believe in honest communication and clear policies.</p>
-                </div>
-
-                <div class="info-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Continuous Improvement</h3>
-                    <p>Always evolving to meet your needs better.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>✅ Innovative solutions tailored for you</li>
-                <li>✅ Dedicated customer support</li>
-                <li>✅ Industry-leading expertise</li>
-                <li>✅ Affordable and transparent pricing</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Our Vision</h2>
-            <p>Our vision is to become a global leader in [your niche], making quality and innovation accessible to everyone.</p>
-        </section>
-    </div>
-</main>
-
-<div id="footer"></div>
-
-<script>
-    // Load Header and Footer dynamically
-    function loadComponent(url, elementId) {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    console.error(`Failed to load ${url}`);
-                    return '';
-                }
-                return response.text();
-            })
-            .then(html => document.getElementById(elementId).innerHTML = html)
-            .catch(error => console.error(`Error loading ${url}:`, error));
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-        loadComponent('/header.html', 'header');
-        loadComponent('/footer.html', 'footer');
-    });
-</script>
-
+    <script>
+        // Load Header and Footer
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => document.getElementById(elementId).innerHTML = html)
+                .catch(error => console.error('Error loading component:', error));
+        }
+        window.onload = () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        };
+    </script>
 </body>
 </html>
