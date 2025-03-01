@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Refund Policy - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .policy-section {
+            margin: 2rem 0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0.8rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        p.notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border: 1px solid #ffeeba;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .page-heading {
+                font-size: 2rem;
+            }
+
+            .policy-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading">Refund <span class="highlight">Policy</span></h1>
+
+            <section class="policy-section">
+                <h2>Important Notice</h2>
+                <p>At <strong>Invest In Books</strong>, we strive to deliver high-quality publishing services. Due to the "nature of digital products and services", all purchases are "final" and non-refundable. Please read this policy carefully before making any payments.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>Non-Refundable Services</h2>
+                <ul>
+                    <li>ISBN Registration & Processing Fees</li>
+                    <li>Manuscript Review and Formatting Services</li>
+                    <li>Publishing Consultation and Marketing Strategy Sessions</li>
+                    <li>Digital Product Delivery (ISBN PDFs, Guidelines, etc.)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>Exceptional Cases</h2>
+                <p>In rare cases, refunds may be considered if the service has not yet started, and the request is made "within 24 hours" of payment. To initiate a refund request, please <a href="/contact" class="highlight">contact our support team</a> immediately.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2>Membership Cancellations</h2>
+                <p>For "membership subscriptions", you may cancel future renewals anytime. However, past payments are non-refundable.</p>
+            </section>
+
+            <p class="notice"><i class="fas fa-info-circle"></i> "Need help understanding our refund policy?" Feel free to <a href="/contact" class="highlight">get in touch with our team</a> before making any payment.</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        });
+    </script>
+</body>
+</html>
