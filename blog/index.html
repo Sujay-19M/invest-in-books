@@ -12,10 +12,12 @@
         <div class="content-container">
             <h1 class="page-heading" style="text-align: center;">Publishing <span class="highlight">Insights</span></h1>
         
+        <div class="content-box">
         <article class="post">
             <h2>Why ISBN Matters</h2>
             <p>Learn the importance of ISBN for professional publishing...</p>
         </article>
+        </div>
         <div class="main-wrapper">
     <main class="content">
         <!-- Your existing blog content -->
@@ -71,6 +73,7 @@
         }
         .highlight {
             color: #F5A623;
+            
         }
         .policy-section {
             margin: 2rem 0;
@@ -106,6 +109,17 @@
         }
         .submit-btn:hover {
             background-color: #e59420;
+        }
+        .content-box {
+            background-color: #fdfdfd;
+            border: 2px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .content-box:hover {
+            background-color: rgba(42, 92, 130, 0.05);
         }
         .required {
             color: red;
