@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Printing Calculator | Invest In Books</title>
+    <style>
+        /* Calculator Styles Matching Your Website */
+        .calculator-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .calculator-heading {
+            color: #2A5C82;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1A3654;
+            font-weight: 500;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .price-display {
+            background: #F8F9FA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .total-price {
+            font-size: 2rem;
+            color: #2A5C82;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .note {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <div class="calculator-container">
+        <h2 class="calculator-heading">Book Printing Cost Calculator</h2>
+        
+        <div class="form-group">
+            <label>Number of Pages</label>
+            <input type="number" id="pages" min="50" value="100" step="10">
+        </div>
+
+        <div class="form-group">
+            <label>Paper Type (Interior)</label>
+            <select id="paperType">
+                <option value="70">Cream Paper 70 GSM (₹1.20/page)</option>
+                <option value="90">White Paper 90 GSM (₹1.50/page)</option>
+                <option value="120">Art Paper 120 GSM (₹2.00/page)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Cover Type</label>
+            <select id="coverType">
+                <option value="250">Paperback 250 GSM (₹30/cover)</option>
+                <option value="300">Hardcover 300 GSM (₹150/cover)</option>
+                <option value="270">Laminated Cover 270 GSM (₹50/cover)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Number of Copies</label>
+            <input type="number" id="quantity" min="10" value="50" step="10">
+        </div>
+
+        <div class="price-display">
+            <h3>Estimated Printing Cost</h3>
+            <div class="total-price">₹<span id="totalCost">0</span></div>
+            <div class="note">Prices inclusive of GST. Actual quote may vary slightly based on finishing options.</div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        // Pricing Configuration (INR)
+        const priceList = {
+            paper: {
+                70: 1.20,   // Cream Paper
+                90: 1.50,   // White Paper
+                120: 2.00   // Art Paper
+            },
+            cover: {
+                250: 30,    // Paperback
+                300: 150,   // Hardcover
+                270: 50     // Laminated
+            }
+        };
+
+        // Calculator Function
+        function calculateCost() {
+            // Get values
+            const pages = parseInt(document.getElementById('pages').value);
+            const paperType = parseInt(document.getElementById('paperType').value);
+            const coverType = parseInt(document.getElementById('coverType').value);
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            // Calculations
+            const paperCost = pages * priceList.paper[paperType] * quantity;
+            const coverCost = priceList.cover[coverType] * quantity;
+            const total = paperCost + coverCost;
+
+            // Display result
+            document.getElementById('totalCost').textContent = total.toLocaleString('en-IN');
+        }
+
+        // Add event listeners
+        document.querySelectorAll('input, select').forEach(element => {
+            element.addEventListener('input', calculateCost);
+        });
+
+        // Initial calculation
+        calculateCost();
+    </script>
+
+    <!-- Include your existing header/footer script -->
+    <script>
+        fetch('/header.html').then(r => r.text()).then(h => document.getElementById('header').innerHTML = h);
+        fetch('/footer.html').then(r => r.text()).then(f => document.getElementById('footer').innerHTML = f);
+    </script>
+</body>
+</html>
