@@ -6,15 +6,7 @@
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="logo">Invest In Books</a>
-            <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/membership.html">Membership</a>
-            </div>
-        </div>
-    </nav>
+    <div id="header"></div>
 
     <main class="blog-posts">
         <h1>Publishing Insights</h1>
@@ -47,6 +39,86 @@
         </div>
     </aside>
 </div>
+        <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+        <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .form-group {
+            margin: 1rem 0;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .submit-btn {
+            background-color: #F5A623;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #e59420;
+        }
+        .required {
+            color: red;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
         
         <!-- Add more posts -->
     </main>
