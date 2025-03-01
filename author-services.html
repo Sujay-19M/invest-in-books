@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Author Services - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">Author <span class="highlight">Services</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">Comprehensive Services for Every Author</h2>
+                <p><strong class="highlight">Invest In Books</strong> offers a complete range of <strong>Author Services</strong> to help you succeed at every stage of your publishing journey — from manuscript to market. Whether you're a debut author or a seasoned writer, our expert team ensures your book stands out and reaches the right audience.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Our Key Author Services</h2>
+                <ul class="payment-methods">
+                    <li>📚 <strong>Manuscript Editing & Proofreading</strong><br>Ensure your book is polished and professionally edited.</li>
+                    <li>🎨 <strong>Book Cover Design</strong><br>Visually stunning covers that attract readers.</li>
+                    <li>📖 <strong>Interior Layout & Formatting</strong><br>Professional typesetting for both print and eBooks.</li>
+                    <li>✅ <strong>ISBN Registration</strong><br>Get your official ISBN for global recognition.</li>
+                    <li>🖨️ <strong>Book Printing</strong><br>High-quality printing with flexible quantities.</li>
+                    <li>📣 <strong>Marketing & Distribution</strong><br>Reach bookstores, online platforms & libraries.</li>
+                    <li>💰 <strong>Royalty Management</strong><br>Transparent tracking and payout of your royalties.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Tailored Service Packages</h2>
+                <p>Choose from customized service bundles based on your publishing goals:</p>
+                <ul class="payment-methods">
+                    <li>🔹 <strong>Starter Package</strong><br>Editing + Cover Design + eBook Formatting</li>
+                    <li>🔹 <strong>Professional Package</strong><br>Complete Editing + Cover + Interior + ISBN</li>
+                    <li>🔹 <strong>Premium Package</strong><br>Full Publishing + Printing + Marketing + Royalties</li>
+                </ul>
+                <p>Need a custom solution? <a href="/contact">Contact us</a> to create your own package.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Expert Consultation for Authors</h2>
+                <p>Our publishing experts are available for 1-on-1 consultations to guide you through every step of the process, from manuscript improvement to marketing strategies. Whether self-publishing or traditional, we ensure you make informed decisions.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Why Authors Trust Us</h2>
+                <ul class="payment-methods">
+                    <li>✔️ Dedicated Author Manager</li>
+                    <li>✔️ Transparent Pricing with No Hidden Costs</li>
+                    <li>✔️ End-to-End Publishing Support</li>
+                    <li>✔️ Experienced Team of Editors, Designers & Marketers</li>
+                    <li>✔️ Strong Distribution Network (India + Global)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">How to Get Started?</h2>
+                <p>It's easy to begin your publishing journey with us:</p>
+                <ul class="payment-methods">
+                    <li>1️⃣ Submit Your Manuscript via <a href="/submit-manuscript">Submit Form</a></li>
+                    <li>2️⃣ Choose Your Desired Services or Package</li>
+                    <li>3️⃣ Our Team Reviews & Confirms Your Plan</li>
+                    <li>4️⃣ Sit Back and Let Us Handle the Rest!</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Let's Build Your Author Brand</h2>
+                <p>Your book is more than just pages — it’s your legacy. Let <strong class="highlight">Invest In Books</strong> help you make it impactful, professional, and widely read.</p>
+                <p><a href="/contact">Contact Us</a> today to discuss your publishing goals.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
