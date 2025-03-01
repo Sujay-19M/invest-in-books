@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Publishing Agreement - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin: 1.5rem 0;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 0.8rem 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0.6rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border: 1px solid #ffeeba;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .page-heading {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading">Publishing <span class="highlight">Agreement</span></h1>
+
+            <section class="section">
+                <h2>Introduction</h2>
+                <p>This "Publishing Agreement" ("Agreement") outlines the terms and conditions between "Invest In Books" ("Platform") and the "Author/Publisher" ("You") when you submit and publish content on our platform.</p>
+            </section>
+
+            <section class="section">
+                <h2>Grant of Rights</h2>
+                <p>By submitting your work, you "grant Invest In Books" a "non-exclusive license" to publish, distribute, and promote your content across our website and associated platforms.</p>
+                <p>You retain full ownership and copyright of your work.</p>
+            </section>
+
+            <section class="section">
+                <h2>Content Guidelines</h2>
+                <ul>
+                    <li>Your work must be "original" and must not infringe any third-party copyrights.</li>
+                    <li>Content must comply with "legal standards" and "community guidelines".</li>
+                    <li>You are responsible for ensuring that your work does not contain plagiarism or prohibited material.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Revenue & Payments</h2>
+                <p>Any revenue generated from the sale of your published content will be split as per the agreed percentage between "Invest In Books" and the "Author/Publisher".</p>
+                <p>Payment cycles, minimum payout thresholds, and applicable taxes will be governed as per our <a href="/payment-policy">Payment Policy</a>.</p>
+            </section>
+
+            <section class="section">
+                <h2>Withdrawal & Termination</h2>
+                <p>You may request to remove your work from "Invest In Books" by providing "30 days’ notice". However, any ongoing sales, marketing, or distribution during this period will still be subject to this agreement.</p>
+                <p>Invest In Books reserves the right to "remove content" if it violates our policies or legal standards.</p>
+            </section>
+
+            <section class="section">
+                <h2>Liability & Indemnification</h2>
+                <p>You agree to "indemnify and hold harmless" Invest In Books from any claims arising due to copyright infringement, legal violations, or third-party disputes related to your work.</p>
+            </section>
+
+            <section class="section">
+                <h2>Amendments</h2>
+                <p>Invest In Books reserves the right to "update this agreement". Significant changes will be notified to you via email or your registered dashboard.</p>
+            </section>
+
+            <p class="notice"><i class="fas fa-info-circle"></i> By publishing your work on "Invest In Books", you confirm that you have read, understood, and agree to this "Publishing Agreement".</p>
+
+            <p>Need more clarity? Reach out via our <a href="/contact">Contact Page</a>.</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        });
+    </script>
+</body>
+</html>
