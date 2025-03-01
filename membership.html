@@ -1,216 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- HEADER DIV WAS INCORRECTLY PLACED HERE - MOVED TO BODY -->
-    <title>Become a Member - Invest In Books</title>
+    <title>Membership Programs - Invest In Books</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* IMPROVED CSS ORGANIZATION */
         :root {
-            --primary-blue: #1e3a8a;
-            --hover-blue: #1c2e63;
-            --background: #f9f9f9;
-            --card-bg: #fff;
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
         }
-
         body {
             font-family: 'Arial', sans-serif;
             background-color: var(--background);
-            color: #333;
+            color: var(--text-color);
             margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.7;
         }
-
         .content-container {
-            background-color: var(--card-bg);
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            flex: 1;
         }
-
-        h1, h2 {
+        h1 {
             text-align: center;
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 2.5rem;
         }
-
-        .membership-intro {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.1em;
-            color: #555;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* IMPROVED FORM STYLING */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            display: block;
-            color: var(--primary-blue);
-        }
-
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        input:focus {
-            border-color: var(--primary-blue);
-            outline: none;
-        }
-
-        .plan-options {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .plan-options label {
-            background-color: #f0f4ff;
+        .membership-box {
+            background-color: #fdfdfd;
+            border: 2px solid var(--primary-color);
             padding: 1.5rem;
+            margin: 1rem 0;
             border-radius: 8px;
-            cursor: pointer;
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            transition: all 0.3s;
         }
-
-        .plan-options input:checked + label {
-            background-color: var(--primary-blue);
-            color: white;
-            border-color: var(--primary-blue);
+        .membership-box:hover {
+            background-color: rgba(42, 92, 130, 0.05);
         }
-
-        .cta-btn {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-            margin-top: 1.5rem;
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
         }
-
-        .cta-btn:hover {
-            background-color: var(--hover-blue);
+        p {
+            margin: 0.5rem 0;
         }
-
-        .note {
-            text-align: center;
-            margin-top: 1.5rem;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        .note a {
-            color: var(--primary-blue);
-            text-decoration: none;
+        .price {
+            font-size: 1.3rem;
             font-weight: bold;
+            color: var(--accent-color);
         }
-
-        .note a:hover {
-            text-decoration: underline;
+        ul {
+            padding-left: 1.5rem;
+            margin: 0.5rem 0;
         }
-
-        /* RESPONSIVE DESIGN */
+        .highlight {
+            background-color: rgba(245, 166, 35, 0.2);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1.2rem;
+            display: inline-block;
+            border-radius: 6px;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background-color: var(--accent-color);
+        
+        }
         @media (max-width: 768px) {
             .content-container {
-                margin: 20px;
-                padding: 20px;
+                padding: 1rem;
             }
-
-            .plan-options {
-                flex-direction: column;
+            .membership-box {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- CORRECT HEADER PLACEMENT -->
     <div id="header"></div>
 
-    <div class="content-container">
-        <h1>Join Our Exclusive Membership</h1>
-        <p class="membership-intro">
-            Unlock premium benefits including priority ISBN allocation, 
-            discounted publishing rates, and expert marketing guidance.
-        </p>
+    <main>
+        <div class="content-container">
+            <h1>Membership Programs</h1>
+            <p>Choose a membership plan that fits your reading and investment journey with <strong>Invest In Books</strong>. Whether you are a curious beginner or a serious book investor, we have something for you!</p>
 
-        <form action="/submit-membership" method="POST">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <!-- Basic Membership -->
+            <div class="membership-box">
+                <h2>Basic Membership</h2>
+                <p class="price">INR 199 / Month (INR)</p>
+                <ul>
+                    <li>Access to our curated <span class="highlight">Top 50 Investment Books List</span></li>
+                    <li>Monthly reading recommendations</li>
+                    <li>Exclusive newsletters with "investment insights from books"</li>
+                </ul>
+                <a href="checkout.html?plan=basic" class="cta-button">Get Basic Plan</a>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+            <!-- Premium Membership -->
+            <div class="membership-box">
+                <h2>Premium Membership</h2>
+                <p class="price">499 / Month (INR)</p>
+                <ul>
+                    <li>Everything in Basic Membership</li>
+                    <li><strong>Full access</strong> to in-depth book summaries and case studies</li>
+                    <li>Quarterly live sessions with "finance experts"</li>
+                    <li>Personalized reading roadmap based on your goals</li>
+                </ul>
+                <a href="checkout.html?plan=premium" class="cta-button">Get Premium Plan</a>
             </div>
 
-            <div class="form-group">
-                <label>Select Your Plan</label>
-                <div class="plan-options">
-                    <input type="radio" id="basic" name="plan" value="basic" required>
-                    <label for="basic">
-                        <strong>Basic Plan</strong><br>
-                        ₹499/year<br>
-                        ₹59 per book
-                    </label>
-
-                    <input type="radio" id="premium" name="plan" value="premium">
-                    <label for="premium">
-                        <strong>Premium Plan</strong><br>
-                        ₹1599/year<br>
-                        Unlimited Publishing
-                    </label>
-                </div>
+            <!-- Per-Year Membership -->
+            <div class="membership-box">
+                <h2>Per Year Membership</h2>
+                <p class="price">1599 / Per-Year (INR)</p>
+                <ul>
+                    <li><strong>Yearly access</strong> to all content & future updates</li>
+                    <li>Two free consultation session every year</li>
+                    <li>Exclusive invites to future book-investment events</li>
+                    <li>Priority support & recommendations</li>
+                </ul>
+                <a href="checkout.html?plan=yearly" class="cta-button">Get Yearly Plan</a>
             </div>
 
-            <button type="submit" class="cta-btn">Start Publishing Journey</button>
+              <div style="text-align: center; margin-top: 1.5rem;">
+    <a href="/publish" style="">
+      </ul>
+                <a href="/membership/checkout" class="cta-button">Start Publishing Now</a>
+</div>
         </form>
-
-        <p class="note">
-            Already a member? <a href="/login">Access your account here</a><br>
-            Need help? <a href="/contact">Contact our support team</a>
-        </p>
-    </div>
+            <p style="text-align: center; margin-top: 1rem;">
+    Already a Member? <a href="/login" style="color: var(--primary-color, #2A5C82); text-decoration: underline;">Access your account here</a><br>
+            <style="margin-top: 2rem; text-align: center; font-size: 0.9rem;">Need help choosing a plan? <a href="/contact" style="color: var(--primary-color, #2A5C82); text-decoration: underline;">Contact Us</a> for guidance.</p>
+        </div>
+    </main>
 
     <div id="footer"></div>
 
-    <!-- ADD THIS SCRIPT TO LOAD HEADER/FOOTER -->
     <script>
-        // Load Header
-        fetch('/header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header').innerHTML = data);
-
-        // Load Footer
-        fetch('/footer.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('footer').innerHTML = data);
+        // Load Header and Footer
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => document.getElementById(elementId).innerHTML = html)
+                .catch(error => console.error('Error loading component:', error));
+        }
+        window.onload = () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        };
     </script>
 </body>
 </html>
+
+    
