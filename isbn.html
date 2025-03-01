@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ISBN Registration - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">ISBN <span class="highlight">Registration</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">What is an ISBN?</h2>
+                <p>The International Standard Book Number (ISBN) is a unique identifier assigned to books and other publications, making it easier for libraries, bookstores, and distributors to find and order your book.</p>
+                <p>ISBNs are essential for both print and digital books if you want your work to be officially listed and distributed globally.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Why Do You Need an ISBN?</h2>
+                <ul class="payment-methods">
+                    <li>✅ ISBN enhances your book’s credibility in the publishing world.</li>
+                    <li>✅ Enables your book to be listed in official catalogues and databases.</li>
+                    <li>✅ Required for distribution through major bookstores and libraries.</li>
+                    <li>✅ Helps with copyright protection and global tracking.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Our ISBN Registration Service</h2>
+                <p>At <strong class="highlight">Invest In Books</strong>, we offer a seamless ISBN registration service for authors and publishers. Whether you are publishing a paperback, hardcover, or eBook, we can handle your registration process with ease.</p>
+                <p>We ensure that your ISBN is correctly registered with the official agency in your region, and all necessary metadata (title, author, publisher, etc.) is accurately recorded.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Service Inclusions</h2>
+                <ul class="payment-methods">
+                    <li>📌 One Official ISBN (print or digital)</li>
+                    <li>📌 Metadata Submission</li>
+                    <li>📌 ISBN Certificate</li>
+                    <li>📌 Guidance on Barcode Creation</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">How to Apply for ISBN Registration?</h2>
+                <p>Getting your ISBN through us is simple:</p>
+                <ol class="payment-methods">
+                    <li>📥 Fill out our <a href="/isbn-application-form">ISBN Application Form</a>.</li>
+                    <li>💳 Complete the payment process.</li>
+                    <li>✅ Our team will review your details and process your ISBN registration within 3-5 working days.</li>
+                </ol>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Pricing</h2>
+                <p>Our ISBN Registration Service is available at an affordable price of <strong class="highlight">₹1,500</strong> (inclusive of processing fees and consultation).</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Need Help?</h2>
+                <p>If you have any questions or need personalized assistance, feel free to contact us via our <a href="/contact">Contact Page</a> or email at <a href="mailto:support@investinbooks.com">support@investinbooks.com</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
