@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Marketing & Distribution - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">Marketing & <span class="highlight">Distribution</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">Comprehensive Marketing & Distribution Services</h2>
+                <p>At <strong class="highlight">Invest In Books</strong>, we don’t just help you publish your book — we help you sell it! Our tailored <strong>Marketing & Distribution</strong> services ensure your book reaches the right readers, bookstores, and online platforms.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">What We Offer</h2>
+                <ul class="payment-methods">
+                    <li>📢 Customized Book Marketing Plans</li>
+                    <li>📢 Social Media Promotions & Ad Campaigns</li>
+                    <li>📢 Author Branding & PR Services</li>
+                    <li>📢 Online Store Listing (Amazon, Flipkart, etc.)</li>
+                    <li>📢 Global Distribution with ISBN Integration</li>
+                    <li>📢 Book Launch Events & Virtual Promotions</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Book Distribution Channels</h2>
+                <p>Your book deserves a global audience. We ensure wide reach through:</p>
+                <ul class="payment-methods">
+                    <li>🌍 Leading Online Marketplaces (Amazon, Flipkart, Barnes & Noble)</li>
+                    <li>🌍 Digital Platforms (Google Books, Apple Books, Kobo)</li>
+                    <li>🌍 Direct Sales via Your Author Website</li>
+                    <li>🌍 Library & Institutional Sales Network</li>
+                    <li>🌍 Bookstores (Regional & National Partners)</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Marketing Strategies We Use</h2>
+                <p>Our marketing campaigns are designed to amplify your book’s visibility:</p>
+                <ul class="payment-methods">
+                    <li>🚀 Social Media Campaigns (Instagram, Facebook, LinkedIn)</li>
+                    <li>🚀 Targeted Google & Amazon Ads</li>
+                    <li>🚀 Email Marketing to Reader Communities</li>
+                    <li>🚀 Influencer Collaborations & Book Reviews</li>
+                    <li>🚀 Press Releases & Media Coverage</li>
+                    <li>🚀 Book Trailers & Video Promotions</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Pricing & Packages</h2>
+                <p>We offer flexible packages depending on your goals and target audience. Whether you want basic online visibility or a full-fledged marketing blitz, we have options for you.</p>
+                <p>👉 To get a custom quote, please visit our <a href="/contact">Contact Page</a> or email us at <a href="mailto:support@investinbooks.in">support@investinbooks.in</a>.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Author Success Stories</h2>
+                <p>Many authors have trusted <strong class="highlight">Invest In Books</strong> to handle their marketing and distribution — and they’ve seen real results. Your book could be next!</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Let’s Take Your Book to the World!</h2>
+                <p>Ready to give your book the spotlight it deserves? Our expert team is here to support your journey from launch to bestseller.</p>
+                <p><a href="/contact">Get in touch</a> today and let’s create a winning plan for your book!</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
