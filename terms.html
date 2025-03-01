@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Terms & Conditions - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+        }
+        p, li {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        strong {
+            color: var(--accent-color);
+        }
+        ul {
+            padding-left: 1.5rem;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .highlight {
+            background-color: rgba(245, 166, 35, 0.2);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1>Terms & Conditions</h1>
+            <p>Welcome to <strong>Invest In Books</strong>. By accessing or using our website, you agree to comply with and be bound by these Terms and Conditions. Please read them carefully before using the site or our services.</p>
+
+            <h2>1. Use of Our Services</h2>
+            <p>Our platform offers publishing-related services including ISBN assistance, membership programs, and general publishing support.</p>
+            <ul>
+                <li>You must provide accurate and complete information when signing up or requesting services.</li>
+                <li>Services provided under <span class="highlight">Membership Programs</span> are subject to eligibility criteria.</li>
+                <li>We reserve the right to refuse service if we detect misuse, illegal activity, or incomplete information.</li>
+            </ul>
+
+            <h2>2. Payments & Refunds</h2>
+            <p>Payments for services must be made in advance. Once processed, <strong>payments are non-refundable</strong> unless explicitly stated in a particular service policy.</p>
+            <ul>
+                <li>Membership fees are also non-refundable after activation.</li>
+                <li>If you have any payment disputes, contact us at <a href="mailto:support@investinbooks.com">support@investinbooks.com</a>.</li>
+            </ul>
+
+            <h2>3. Intellectual Property</h2>
+            <p>All content, logos, designs, and material on <strong>Invest In Books</strong> are protected by intellectual property laws. You may not copy, reproduce, or redistribute any content without our permission.</p>
+
+            <h2>4. User Responsibilities</h2>
+            <p>By using our website, you agree that you will:</p>
+            <ul>
+                <li>Use our services for **lawful** and **ethical** purposes only.</li>
+                <li>Not misuse any contact information, membership benefits, or downloadable materials provided to you.</li>
+                <li>Respect our content, team, and fellow users.</li>
+            </ul>
+
+            <h2>5. Service Modifications</h2>
+            <p>We may modify, update, or discontinue any service, pricing, or content at any time. We will make reasonable efforts to notify users of significant changes, especially in the <span class="highlight">membership program terms.</span></p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>While we strive to provide accurate and reliable services, <strong>Invest In Books</strong> will not be liable for:</p>
+            <ul>
+                <li>Any loss or damage resulting from incomplete or inaccurate information provided by the user.</li>
+                <li>Delays caused by third-party agencies, such as ISBN agencies, printers, or delivery partners.</li>
+            </ul>
+
+            <h2>7. Governing Law</h2>
+            <p>These Terms are governed by and interpreted in accordance with the laws of <strong>India</strong>. Any disputes will be handled in the courts of <strong>New Delhi</strong>.</p>
+
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions about these Terms & Conditions, please contact us:</p>
+            <p>Email: <a href="mailto:support@investinbooks.com">support@investinbooks.com</a></p>
+            <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+
+            <p style="margin-top: 2rem; font-size: 0.9rem;">By using our website, you confirm that you have read, understood, and agreed to these Terms & Conditions.</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Load Header and Footer
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => document.getElementById(elementId).innerHTML = html)
+                .catch(error => console.error('Error loading component:', error));
+        }
+        window.onload = () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        };
+    </script>
+</body>
+</html>
