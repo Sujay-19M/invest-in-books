@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Copyright - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin: 1.5rem 0;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 0.8rem 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0.6rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            border: 1px solid #ffeeba;
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .page-heading {
+                font-size: 2rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading">Copyright <span class="highlight">Notice</span></h1>
+
+            <section class="section">
+                <h2>Ownership & Copyright</h2>
+                <p>All content, materials, branding, images, text, graphics, logos, and digital products featured on <strong>Invest In Books</strong> are the "intellectual property" of Invest In Books, unless otherwise stated.</p>
+                <p>These materials are protected under "copyright laws", international treaties, and intellectual property rights.</p>
+            </section>
+
+            <section class="section">
+                <h2>Usage Restrictions</h2>
+                <ul>
+                    <li>You may "not copy, reproduce, modify, or distribute" any content from this website without "written permission" from Invest In Books.</li>
+                    <li>All downloadable materials (guides, templates, resources) are for "personal or internal business use only" unless specified otherwise.</li>
+                    <li>Reselling, republishing, or distributing our content without authorization is strictly prohibited.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>Third-Party Content</h2>
+                <p>Some content may include "third-party assets" (logos, quotes, images) used under "fair use policy" or "with appropriate licenses". Such content remains the property of their respective owners.</p>
+            </section>
+
+            <section class="section">
+                <h2>Reporting Copyright Violations</h2>
+                <p>If you believe your copyrighted work appears on this website without authorization, please contact us at: <a href="mailto:support@investinbooks.in">support@investinbooks.in</a> for prompt action.</p>
+            </section>
+
+            <p class="notice"><i class="fas fa-info-circle"></i> For questions about this "Copyright Notice", please visit our <a href="/contact">Contact Page</a>.</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        });
+    </script>
+</body>
+</html>
