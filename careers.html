@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Career - Invest In Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading" style="text-align: center;">Join Our <span class="highlight">Team</span></h1>
+
+            <section class="policy-section">
+                <h2 class="section-title">Why Work With Us?</h2>
+                <p>At <strong class="highlight">Invest In Books</strong>, we are not just a publishing platform — we are a community driven by passion, creativity, and innovation. Our team thrives on collaboration and the love for storytelling. If you are looking for a dynamic career in the publishing industry, you are in the right place.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Current Openings</h2>
+                <ul class="payment-methods">
+                    <li>📖 Content Writer - Publishing & Editing</li>
+                    <li>📣 Digital Marketing Specialist</li>
+                    <li>📚 Client Relations Executive</li>
+                    <li>🎨 Graphic Designer - Book Covers & Media</li>
+                    <li>💻 Web Developer - Frontend & Backend</li>
+                    <li>📊 SEO Analyst</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">How To Apply?</h2>
+                <p>To apply for any of the above roles, simply send your resume along with a short cover letter to our HR team at <a href="mailto:hr@investinbooks.in">hr@investinbooks.in</a>. Make sure to mention the "Job Title" in the subject line for faster processing.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Our Work Culture</h2>
+                <p>We believe in flexibility, creativity, and innovation. Whether you work remotely or from our office, we ensure you get a supportive environment, growth opportunities, and continuous learning through workshops and team interactions.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Internship Opportunities</h2>
+                <p>Are you a student or fresh graduate looking to gain hands-on experience in the publishing industry? We offer exciting internship programs that help you build skills while working on real projects.</p>
+                <p>Explore more about internships on our <a href="/internship-program">Internship Page</a>.</p>
+            </section>
+
+            <section class="policy-section">
+                <h2 class="section-title">Need Help?</h2>
+                <p>If you have any questions regarding our recruitment process or need further information, feel free to reach out via our <a href="/contact">Contact Page</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #2A5C82;
+        }
+        .highlight {
+            color: #F5A623;
+        }
+        .policy-section {
+            margin: 2rem 0;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #F5A623;
+            display: inline-block;
+        }
+        .payment-methods {
+            list-style-type: none;
+            padding: 0;
+        }
+        .payment-methods li {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #2A5C82;
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
