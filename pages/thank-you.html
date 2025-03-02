@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Successful - Thank You</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        .thank-you-container {
+            background-color: #f0fdfa;
+            border: 1px solid #b2f5ea;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .thank-you-container h1 {
+            color: #008080;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .thank-you-container p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .thank-you-container strong {
+            color: #008080;
+        }
+
+        .thank-you-container .highlight {
+            color: #006666;
+            font-weight: bold;
+        }
+
+        .thank-you-container .action-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .thank-you-container .action-btn:hover {
+            background-color: #218838;
+        }
+
+        .thank-you-container .small-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="thank-you-container">
+            <h1>🎉 Payment Successful!</h1>
+            <p>Thank you for your payment. We have successfully received your order.</p>
+
+            <p>Your <span class="highlight">Transaction ID</span>: <strong id="transactionId">Fetching...</strong></p>
+            <p>We’ve sent a confirmation email to <strong id="userEmail">your email</strong>.</p>
+
+            <a href="../index.html" class="action-btn">Back to Home</a>
+
+            <p class="small-text">If you have any questions, please <a href="contact.html">Contact Us</a>.</p>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Fetch header and footer dynamically (optional)
+            fetch('../components/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+            fetch('../components/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+
+            // Fetch payment details from localStorage (set during payment)
+            const response = JSON.parse(localStorage.getItem('paymentResponse'));
+            const paymentDetails = JSON.parse(localStorage.getItem('paymentDetails'));
+
+            if (response && response.razorpay_payment_id) {
+                document.getElementById('transactionId').innerText = response.razorpay_payment_id;
+            } else {
+                document.getElementById('transactionId').innerText = 'Not Available';
+            }
+
+            if (paymentDetails && paymentDetails.email) {
+                document.getElementById('userEmail').innerText = paymentDetails.email;
+            } else {
+                document.getElementById('userEmail').innerText = 'your registered email';
+            }
+        });
+    </script>
+</body>
+</html>
