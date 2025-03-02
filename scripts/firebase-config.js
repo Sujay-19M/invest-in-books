@@ -1,12 +1,21 @@
-// Firebase Configuration (Replace with your actual Firebase project settings)
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCqnbKIJRtNj73H09KAqKgpmVU3gvzgAqc",
+  authDomain: "invest-in-books.firebaseapp.com",
+  projectId: "invest-in-books",
+  storageBucket: "invest-in-books.firebasestorage.app",
+  messagingSenderId: "503080473473",
+  appId: "1:503080473473:web:ed856a1604bb5817a8ce80",
+  measurementId: "G-BLLLQKLLCS"
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
