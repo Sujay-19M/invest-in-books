@@ -1,85 +1,100 @@
 <!-- Website Header - Appears on Every Page -->
-<header>
+<header class="main-header">
     <nav class="main-nav">
         <div class="nav-container">
             <a href="/" class="logo">
                 Invest In Books
             </a>
-            
-            <!-- Hamburger Menu -->
-            <div class="hamburger" onclick="toggleMenu()">
-                &#9776; <!-- Hamburger icon -->
-            </div>
 
-            <!-- Navigation Links -->
+            <!-- Desktop Links (Hidden on Mobile) -->
             <div class="nav-links">
                 <a href="/">Home</a>
                 <a href="/about.html">About</a>
-                <a href="/pages/membership.html">Membership</a>
-                <a href="/blog">Blog</a>
+                <a href="/membership.html">Membership</a>
+                <a href="/blog.html">Blog</a>
                 <a href="/contact.html">Contact</a>
+            </div>
+
+            <!-- Hamburger Icon (Visible on Mobile) -->
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                &#9776;
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMenu()"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-btn" onclick="toggleMenu()">✖</button>
+    <!-- Slide-out Mobile Menu -->
+    <div class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <div class="mobile-menu">
+        <button class="close-btn" onclick="toggleMobileMenu()">✖</button>
         <a href="/">Home</a>
         <a href="/about.html">About</a>
-        <a href="/membership.html">Membership</a>
-        <a href="/blog.html">Blog</a>
+        <a href="/pages/membership.html">Membership</a>
+        <a href="/blog">Blog</a>
         <a href="/contact.html">Contact</a>
     </div>
 
     <style>
-        /* Header Styles */
-        .main-nav {
-            background: white;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        .main-header {
             position: relative;
             z-index: 1000;
         }
-        
+
+        .main-nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+        }
+
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: bold;
             text-decoration: none;
             color: #2A5C82;
         }
-        
+
         .nav-links {
             display: flex;
+            gap: 20px;
         }
 
         .nav-links a {
-            margin-left: 30px;
             text-decoration: none;
             color: #333;
-        }
-        
-        .nav-links a:hover {
-            color: #F5A623;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 12px;
+            transition: background 0.3s;
         }
 
-        /* Hamburger Menu */
+        .nav-links a:hover {
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        /* Hamburger (Mobile only) */
         .hamburger {
             display: none;
             font-size: 28px;
             cursor: pointer;
         }
 
-        /* Mobile Navigation */
+        /* Mobile Menu (Hidden by default) */
         .mobile-menu-overlay {
             display: none;
             position: fixed;
@@ -87,51 +102,52 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
             z-index: 999;
         }
 
         .mobile-menu {
             position: fixed;
             top: 0;
-            left: -250px;
-            width: 250px;
+            left: -270px;
+            width: 270px;
             height: 100%;
             background: white;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            box-shadow: 2px 0 8px rgba(0,0,0,0.2);
             display: flex;
             flex-direction: column;
-            padding-top: 60px;
-            transition: left 0.3s ease-in-out;
+            padding: 20px;
+            gap: 15px;
+            transition: left 0.3s ease;
+            z-index: 1000;
         }
 
         .mobile-menu a {
-            padding: 15px 20px;
             text-decoration: none;
             color: #333;
-            display: block;
-            transition: background 0.3s ease;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .mobile-menu a:hover {
-            background: #f5f5f5;
+            background-color: #f5f5f5;
         }
 
         .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
+            align-self: flex-end;
+            font-size: 22px;
             background: none;
             border: none;
-            font-size: 24px;
             cursor: pointer;
         }
 
-        /* Responsive Design */
+        /* Responsive Behaviour */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Hide regular nav links on mobile */
+                display: none;
             }
 
             .hamburger {
@@ -141,12 +157,13 @@
     </style>
 
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("mobileMenu");
-            var overlay = document.getElementById("mobileMenuOverlay");
-            
-            if (menu.style.left === "0px") {
-                menu.style.left = "-250px";
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            const isOpen = menu.style.left === "0px";
+
+            if (isOpen) {
+                menu.style.left = "-270px";
                 overlay.style.display = "none";
             } else {
                 menu.style.left = "0px";
