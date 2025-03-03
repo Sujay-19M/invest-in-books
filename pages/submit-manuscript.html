@@ -3,7 +3,6 @@
 <head>
     <title>Submit Manuscript - Invest In Books</title>
     <link rel="stylesheet" href="/assets/styles.css">
-    <!-- Updated Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -11,8 +10,9 @@
 
     <main>
         <div class="content-container">
-            <h1 class="page-heading" style="text-align: center;">Submit Your <span class="highlight">Manuscript</span>
-            <br>ISBN <span class="highlight">Request</span> Form
+            <h1 class="page-heading" style="text-align: center;">
+                Submit Your <span class="highlight">Manuscript</span><br>
+                ISBN <span class="highlight">Request</span> Form
             </h1>
 
             <section class="policy-section">
@@ -61,19 +61,23 @@
                         <label for="manuscriptFile">Upload Manuscript (PDF/Word) <span class="required">*</span></label>
                         <input type="file" id="manuscriptFile" name="manuscriptFile" accept=".pdf, .doc, .docx" required>
                     </div>
+
                     <div class="form-group">
-                        <label for="publicationYear" style="font-weight: bold;">Publication Year:</label>
-                        <input type="number" id="publicationYear" required style="width: 100%; margin-bottom: 10px;">
-                      </div>
-                      <div class="form-group">
-                        <label for="publicationName" style="font-weight: bold;">Publication Name:</label>
-                        <input type="text" id="publicationName" value="Invest In Books" readonly style="width: 100%; margin-bottom: 5px; background-color: #f0f0f0; cursor: not-allowed;">
-                      </div>
-                      <div class="form-group">
+                        <label for="publicationYear">Publication Year:</label>
+                        <input type="number" id="publicationYear" name="publicationYear" required style="width: 100%; margin-bottom: 10px;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="publicationName">Publication Name:</label>
+                        <input type="text" id="publicationName" name="publicationName" value="Invest In Books" readonly style="width: 100%; margin-bottom: 5px; background-color: #f0f0f0; cursor: not-allowed;">
+                    </div>
+
+                    <div class="form-group">
                         <p style="color: green; font-size: 0.9em; margin-top: 0; margin-bottom: 10px;">
                             Thank you for choosing <strong>Invest In Books</strong> as your corporate book publisher. Your book will be proudly published under our prestigious banner, ensuring wide recognition and credibility in the literary world.
                         </p>
-                      </div>
+                    </div>
+
                     <div class="form-group">
                         <label for="additionalNotes">Additional Notes (Optional)</label>
                         <textarea id="additionalNotes" name="additionalNotes" rows="4"></textarea>
@@ -116,11 +120,11 @@
             const phone = document.getElementById('phone').value.trim();
             const bookTitle = document.getElementById('bookTitle').value.trim();
             const genre = document.getElementById('genre').value.trim();
-            const publicationYear = document.getElementById('Publication Year').value.trim();
-            const publicationName = document.getElementById('Publication Name').value.trim();
+            const publicationYear = document.getElementById('publicationYear').value.trim();
+            const publicationName = document.getElementById('publicationName').value.trim();
             const additionalNotes = document.getElementById('additionalNotes').value.trim();
 
-            if (!authorName || !email || !bookTitle || !genre) {
+            if (!authorName || !email || !bookTitle || !genre || !publicationYear) {
                 alert('Please fill in all required fields.');
                 return;
             }
@@ -141,7 +145,6 @@
                 Note: Manuscript file is attached in the form (if supported by your email client).
             `;
 
-            // Creating a mailto link
             const mailtoLink = `mailto:msujay.work@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoLink;
 
