@@ -2,24 +2,29 @@
 <html lang="en">
 <head>
     <title>Register - Invest In Books</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="assets/js/script.js" defer></script>
+    <script src="../assets/js/script.js" defer></script>
 </head>
 <body>
     <div id="header"></div>
-    <main>
-        <div class="form-container">
-            <h2>Create Account</h2>
+
+    <main class="centered-container">
+        <div class="form-card">
+            <h2>Create Your Free Account 📖</h2>
+            <p>Join our growing community of smart book investors!</p>
             <form id="registerForm">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Create Password" required>
                 <button type="submit">Register</button>
+                <p class="form-note">Already have an account? <a href="login.html">Login Here</a></p>
             </form>
-            <div class="loading-screen" id="loading">Creating account...</div>
+            <div class="loading-screen" id="loading">Creating your account...</div>
         </div>
     </main>
+
     <div id="footer"></div>
 </body>
 </html>
