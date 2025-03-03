@@ -4,201 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Invest In Books</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <!-- Updated Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Universal Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        /* Enhanced CSS with Variables */
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
         }
 
         body {
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
         }
 
-        /* Header Style */
-        header {
-            background-color: #1e3a8a;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 5px 10px;
-            background: #2563eb;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #1d4ed8;
-        }
-
-        /* Main Login Section */
-        .login-container {
-            max-width: 400px;
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
             background: white;
-            margin: 50px auto;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-heading {
+            font-size: 2.5rem;
             text-align: center;
+            margin-bottom: 2rem;
         }
 
-        .login-container h2 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: #1e3a8a;
+        .about-section {
+            margin: 3rem 0;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
-        .form-group label {
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus {
-            border-color: #1e3a8a;
-            outline: none;
-        }
-
-        .login-btn {
-            background: #1e3a8a;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
-
-        .login-btn:hover {
-            background: #2563eb;
-        }
-
-        .extra-links {
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-
-        .extra-links a {
-            color: #1e3a8a;
-            text-decoration: none;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            padding: 15px;
+        .about-card {
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             text-align: center;
-            background-color: #1e3a8a;
-            color: white;
-            font-size: 0.9rem;
+            transition: transform 0.3s ease;
         }
 
-        footer a {
-            color: #fbbf24;
-            text-decoration: none;
+        .about-card:hover {
+            transform: translateY(-5px);
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .about-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
         }
+
+        .section-title {
+            font-size: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .page-heading {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        <!-- Paste this inside <style> in your <head>, replace old .login-container styles -->
+
+.login-container {
+    max-width: 400px;
+    background: #fff;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container h2 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+}
+
+.welcome-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.quote {
+    font-size: 0.85rem;
+    color: #888;
+    background: #f0f4ff;
+    padding: 8px;
+    border-left: 4px solid #2563eb;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #1e3a8a;
+    outline: none;
+    background: #f0f8ff;
+}
+
+.login-btn {
+    background: #1e3a8a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background 0.3s;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.login-btn:hover {
+    background: #2563eb;
+}
+
+.extra-links {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.extra-links a {
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
-
-    <!-- Universal Header -->
-    <header>
-        Invest In Books
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <div id="header"></div>
 
     <!-- Login Form Section -->
-    <div class="login-container">
-        <h2>Login to Your Account</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+    <!-- Paste this inside your `login.html`, in the <body> section (replace previous content inside <div class="login-container">) -->
 
-        <div class="extra-links">
-            <p>New User? <a href="register.html">Create an account</a></p>
-            <p>Forgot Password? <a href="#">Reset here</a></p>
+<div class="login-container">
+    <h2>📚 Welcome Back, Book Explorer!</h2>
+    <p class="welcome-text">Your personal library of investment-worthy books awaits.</p>
+    <blockquote class="quote">
+        "A reader lives a thousand lives before he dies." - George R.R. Martin
+    </blockquote>
+    
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="email">📧 Your Reader Email</label>
+            <input type="email" id="email" placeholder="Enter your email..." required>
         </div>
+        <div class="form-group">
+            <label for="password">🔒 Secret Bookworm Password</label>
+            <input type="password" id="password" placeholder="Your super secret password..." required>
+        </div>
+        <button type="submit" class="login-btn">📖 Unlock Library</button>
+    </form>
+
+    <div class="extra-links">
+        <p>New to the club? <a href="register.html">Create your reading account</a></p>
+        <p>Forgot password? <a href="#">Recover your secret key</a></p>
     </div>
+</div>
 
     <!-- Universal Footer -->
-    <footer>
-        © 2025 Invest In Books | 
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="terms.html">Terms of Service</a>
-    </footer>
+    <div id="footer"></div>
+    
+   <!-- Paste this inside <script> at the end of your file -->
 
-    <!-- Inline JS (For Simple Functionality) -->
-    <script>
-        document.getElementById('loginForm').onsubmit = function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+<script>
+document.getElementById('loginForm').onsubmit = function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-            if (email === '' || password === '') {
-                alert('Please fill in all fields.');
-                return;
-            }
+    if (email === '' || password === '') {
+        alert('📚 Hey Bookworm! Please fill in all fields.');
+        return;
+    }
 
-            // Simple mock login check (replace this with actual logic later)
-            if (email === 'test@example.com' && password === 'password123') {
-                alert('Login successful!');
-                window.location.href = 'dashboard.html';  // Redirect to dashboard
-            } else {
-                alert('Invalid email or password.');
-            }
+    // Simulate fun loading animation
+    const loginBtn = document.querySelector('.login-btn');
+    loginBtn.innerText = '📚 Flipping Pages...';
+    loginBtn.disabled = true;
+
+    setTimeout(() => {
+        if (email === 'reader@investinbooks.com' && password === 'openSesame123') {
+            alert('📖 Welcome back to your library!');
+            window.location.href = 'dashboard.html';  // Redirect to dashboard
+        } else {
+            alert('🚫 Oops! Invalid credentials. Try again, Book Explorer.');
+            loginBtn.innerText = '📖 Unlock Library';
+            loginBtn.disabled = false;
         }
-    </script>
+    }, 2000);
+}
+</script>
+
 
 </body>
 </html>
