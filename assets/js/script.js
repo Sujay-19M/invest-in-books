@@ -1,13 +1,13 @@
-// Load header & footer dynamically
-document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header', '../header.html');
-    loadComponent('footer', '../footer.html');
-});
-
-function loadComponent(elementId, filePath) {
-    fetch(filePath)
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById(elementId).innerHTML = html;
-        });
-}
+<script>
+        // Load Header and Footer
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => document.getElementById(elementId).innerHTML = html)
+                .catch(error => console.error('Error loading component:', error));
+        }
+        window.onload = () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        };
+    </script>
