@@ -116,6 +116,8 @@
             const phone = document.getElementById('phone').value.trim();
             const bookTitle = document.getElementById('bookTitle').value.trim();
             const genre = document.getElementById('genre').value.trim();
+            const genre = document.getElementById('Publication Year').value.trim();
+            const genre = document.getElementById('Publication Name').value.trim();
             const additionalNotes = document.getElementById('additionalNotes').value.trim();
 
             if (!authorName || !email || !bookTitle || !genre) {
@@ -130,6 +132,8 @@
                 Phone: ${phone || 'N/A'}
                 Book Title: ${bookTitle}
                 Genre: ${genre}
+                Publication Year: ${publicationYear}
+                Publication Name: ${InvestInBooks}
                 
                 Additional Notes:
                 ${additionalNotes || 'N/A'}
