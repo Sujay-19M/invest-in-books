@@ -1,285 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Invest In Books</title>
-    <link rel="stylesheet" href="/assets/styles.css">
-    <!-- Updated Font Awesome CDN -->
+    <title>Login - Welcome to TuneTron Music</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Enhanced CSS with Variables */
+        /* Root Theme Variables */
         :root {
             --primary-color: #2A5C82;
             --accent-color: #F5A623;
+            --background-color: #f0f4f8;
+            --card-bg: white;
             --text-color: #444;
-            --background: #f8f9fa;
         }
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: var(--background);
+            background: var(--background-color);
             color: var(--text-color);
             margin: 0;
-            line-height: 1.7;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .content-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        .login-container {
+            background: var(--card-bg);
+            padding: 3rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
             border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
         }
 
-        h1, h2, h3 {
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 {
             color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .page-heading {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .about-section {
-            margin: 3rem 0;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .about-card {
-            padding: 2rem;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .about-card i {
-            font-size: 2.5rem;
-            color: var(--accent-color);
             margin-bottom: 1rem;
-        }
-
-        .section-title {
             font-size: 2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
+            font-weight: bold;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 600;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content-container {
-                margin: 1rem;
-                padding: 1.5rem;
-            }
-
-            .page-heading {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
+        .input-group {
+            margin-bottom: 1rem;
+            position: relative;
+            animation: popUp 0.8s ease-out;
         }
-        <!-- Paste this inside <style> in your <head>, replace old .login-container styles -->
 
-.login-container {
-    max-width: 400px;
-    background: #fff;
-    margin: 50px auto;
-    padding: 30px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border-radius: 12px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    animation: slideIn 1s ease-in-out;
-}
+        @keyframes popUp {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
 
-.login-container h2 {
-    font-size: 1.8rem;
-    color: #1e3a8a;
-    margin-bottom: 8px;
-}
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
 
-.welcome-text {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 15px;
-    font-style: italic;
-}
+        .login-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
 
-.quote {
-    font-size: 0.85rem;
-    color: #888;
-    background: #f0f4ff;
-    padding: 8px;
-    border-left: 4px solid #2563eb;
-    margin-bottom: 15px;
-}
+        .login-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
 
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
+        .social-login {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
 
-.form-group label {
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    display: block;
-}
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--accent-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
 
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
+        .social-btn:hover {
+            transform: rotate(15deg);
+        }
 
-.form-group input:focus {
-    border-color: #1e3a8a;
-    outline: none;
-    background: #f0f8ff;
-}
+        .wave-bg {
+            position: absolute;
+            top: -20%;
+            left: -50%;
+            width: 200%;
+            height: 250%;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            transform: rotate(-15deg);
+            z-index: -1;
+            animation: waveMove 10s infinite linear;
+        }
 
-.login-btn {
-    background: #1e3a8a;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-    transition: background 0.3s;
-    animation: pulse 1.5s infinite;
-}
+        @keyframes waveMove {
+            0% { transform: rotate(-15deg) translateX(0); }
+            50% { transform: rotate(-15deg) translateX(-10%); }
+            100% { transform: rotate(-15deg) translateX(0); }
+        }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.03); }
-    100% { transform: scale(1); }
-}
+        .footer-text {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            animation: fadeIn 2s ease-in-out;
+        }
 
-.login-btn:hover {
-    background: #2563eb;
-}
+        .footer-text a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.extra-links {
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
-
-.extra-links a {
-    color: #1e3a8a;
-    text-decoration: none;
-}
-
-.extra-links a:hover {
-    text-decoration: underline;
-}
-
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div id="header"></div>
-
-    <!-- Login Form Section -->
-    <!-- Paste this inside your `login.html`, in the <body> section (replace previous content inside <div class="login-container">) -->
 
 <div class="login-container">
-    <h2>📚 Welcome Back, Book Explorer!</h2>
-    <p class="welcome-text">Your personal library of investment-worthy books awaits.</p>
-    <blockquote class="quote">
-        "A reader lives a thousand lives before he dies." - George R.R. Martin
-    </blockquote>
+    <div class="wave-bg"></div>
+    <h1>Welcome Back!</h1>
+    <p>Login to your <strong>Invest In Books</strong> account</p>
     
-    <form id="loginForm">
-        <div class="form-group">
-            <label for="email">📧 Your Reader Email</label>
-            <input type="email" id="email" placeholder="Enter your email..." required>
-        </div>
-        <div class="form-group">
-            <label for="password">🔒 Secret Bookworm Password</label>
-            <input type="password" id="password" placeholder="Your super secret password..." required>
-        </div>
-        <button type="submit" class="login-btn">📖 Unlock Library</button>
-    </form>
-
-    <div class="extra-links">
-        <p>New to the club? <a href="register.html">Create your reading account</a></p>
-        <p>Forgot password? <a href="#">Recover your secret key</a></p>
+    <div class="input-group">
+        <input type="email" placeholder="Email Address">
     </div>
+    <div class="input-group">
+        <input type="password" placeholder="Password">
+    </div>
+
+    <button class="login-btn">Log In</button>
+
+    <div class="social-login">
+        <button class="social-btn" title="Login with Google"><i class="fab fa-google"></i></button>
+        <button class="social-btn" title="Login with Facebook"><i class="fab fa-facebook-f"></i></button>
+    </div>
+
+    <p class="footer-text">
+        Don't have an account? <a href="#">Sign up</a> | <a href="#">Forgot Password?</a>
+    </p>
 </div>
-
-    <!-- Universal Footer -->
-    <div id="footer"></div>
-    
-   <!-- Paste this inside <script> at the end of your file -->
-
-<script>
-document.getElementById('loginForm').onsubmit = function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    if (email === '' || password === '') {
-        alert('📚 Hey Bookworm! Please fill in all fields.');
-        return;
-    }
-
-    // Simulate fun loading animation
-    const loginBtn = document.querySelector('.login-btn');
-    loginBtn.innerText = '📚 Flipping Pages...';
-    loginBtn.disabled = true;
-
-    setTimeout(() => {
-        if (email === 'reader@investinbooks.com' && password === 'openSesame123') {
-            alert('📖 Welcome back to your library!');
-            window.location.href = 'dashboard.html';  // Redirect to dashboard
-        } else {
-            alert('🚫 Oops! Invalid credentials. Try again, Book Explorer.');
-            loginBtn.innerText = '📖 Unlock Library';
-            loginBtn.disabled = false;
-        }
-    }, 2000);
-}
-</script>
-
 
 </body>
 </html>
