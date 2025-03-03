@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Dashboard - Invest In Books</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --background: #f8f9fa;
+            --text-color: #444;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--background);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .dashboard-container {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-card i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Welcome to Your Dashboard, User!
+    </header>
+
+    <div class="dashboard-container">
+        <h2>Dashboard Overview</h2>
+        <div class="card-grid">
+            <div class="dashboard-card">
+                <i class="fas fa-user-circle"></i>
+                <h3>Profile</h3>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analytics</h3>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Settings</h3>
+            </div>
+
+            <div class="dashboard-card">
+                <i class="fas fa-sign-out-alt"></i>
+                <h3><a href="/logout" style="text-decoration:none; color:var(--primary-color);">Logout</a></h3>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All rights reserved.
+    </footer>
+</body>
+</html>
