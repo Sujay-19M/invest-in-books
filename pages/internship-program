@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Internship - Invest In Books</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2A5C82;
+            --accent-color: #F5A623;
+            --text-color: #444;
+            --background: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 12px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .page-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .internship-section {
+            margin: 3rem 0;
+        }
+
+        .internship-card {
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .internship-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .email-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .page-heading {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="page-heading">Internship Opportunities at <span class="highlight">Invest In Books</span></h1>
+
+            <section class="internship-section">
+                <div class="internship-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>No Open Positions Currently</h2>
+                    <p>We are a <span class="highlight">new and growing platform</span>, and at the moment, we don't have any active internship openings.</p>
+                    <p>However, we are always excited to connect with passionate individuals who love books and publishing.</p>
+                    <p>If you are interested in future opportunities, feel free to drop your updated CV at:</p>
+                    <p><a class="email-link" href="mailto:hr@investinbooks.in">hr@investinbooks.in</a></p>
+                    <p>Our team will reach out whenever relevant openings match your profile.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script>
+        function loadComponent(url, elementId) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => document.getElementById(elementId).innerHTML = data)
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            loadComponent('/header.html', 'header');
+            loadComponent('/footer.html', 'footer');
+        });
+    </script>
+</body>
+</html>
