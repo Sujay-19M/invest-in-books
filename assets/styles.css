@@ -22,67 +22,63 @@ body {
 }
 
 /* Typography */
-        h2 {
-            color: var(--primary-color);
-            font-size: 2.2em;
-            margin-bottom: 1.5em;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            font-size: 1.6em;
-            margin-bottom: 1em;
-        }
+h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 1em;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+}
+h3 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-bottom: 0.8em;
+}
 
 /* Navigation */
 .main-nav {
     background: #fff;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    position: relative;;
-    top: 0;
+    position: relative;
     z-index: 1000;
+    width: 100%;
 }
-
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--dark);
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    
 }
-
 .logo::before {
     content: "📘";
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
-
 .nav-links {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
-
 .nav-links a {
     color: var(--dark);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
     color: var(--primary);
 }
@@ -90,69 +86,60 @@ body {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-    padding: 8rem 2rem;
+    padding: 6rem 1.5rem;
     text-align: center;
     color: white;
     position: relative;
     overflow: hidden;
 }
-
 .hero::after {
     content: "";
     position: absolute;
-    bottom: -50px;
+    bottom: -40px;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 80px;
     background: white;
     transform: skewY(-3deg);
 }
-
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 90%;
+    margin: 0 auto;
 }
-
 .lead {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+    max-width: 90%;
+    margin: 0 auto 1.5rem;
 }
 
 /* Pricing Cards */
 .price-cards {
     display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     max-width: 1200px;
-    margin: 4rem auto;
+    margin: 3rem auto;
     padding: 0 1rem;
 }
-
 .price-card {
     background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px -3px rgba(0, 0, 0, 0.1);
     border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease;
     text-align: center;
 }
-
 .price-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
-
 .price-card.featured {
     border: 2px solid var(--secondary);
     position: relative;
 }
-
 .price-card.featured::before {
     content: "Most Popular";
     position: absolute;
@@ -161,44 +148,35 @@ body {
     transform: translateX(-50%);
     background: var(--secondary);
     color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
 }
-
 .price {
-    font-size: 2.8rem;
+    font-size: 2rem;
     color: var(--dark);
-    margin: 1.5rem 0;
-    font-weight: 700;
+    margin: 1rem 0;
 }
-
 .price span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #64748b;
-    font-weight: 400;
 }
 
 /* Buttons */
 .cta-btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2rem;
     background: var(--secondary);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
-
 .cta-btn:hover {
     background: #e69500;
     transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-
 .cta-btn.secondary {
     background: var(--primary);
 }
@@ -207,127 +185,96 @@ body {
 .site-footer {
     background: #2A5C82;
     color: white;
-    padding: 4rem 2rem 2rem;
-    margin-top: 4rem;
+    padding: 3rem 1rem 1rem;
+    margin-top: 3rem;
 }
-
 .footer-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .footer-heading {
     color: #F5A623;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    width: 100%;
-    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
-
 .footer-links {
-            padding-left: 0;
-            list-style: none;
-        }
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-.footer-links li {
-    margin-bottom: 0.8rem;
-            width: 100%;
-            text-align: left;
-            margin-left: 0;
+    padding-left: 0;
+    list-style: none;
 }
-
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
 .footer-links a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 .footer-links a:hover {
     color: white;
     text-decoration: underline;
 }
-
 .footer-social {
-    margin-top: 1.5rem;
     display: flex;
-    gap: 1.5rem;
+    gap: 0.8rem;
 }
-
 .footer-social a {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
 }
-
 .footer-social a:hover {
     opacity: 1;
 }
-
 .footer-copyright {
     text-align: center;
-    padding-top: 2rem;
-    margin-top: 2rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
 }
 
 /* Mobile Adjustments */
-    .price-cards {
-        grid-template-columns: 1fr;
-    }
-/* Responsive Design */
-        @media (max-width: 768px) {
-            .main-container {
-                margin: 20px;
-                padding: 25px;
-            }
-
-            section {
-                margin: 30px 0;
-                padding: 20px 0;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
-        }
-/* Mobile View (Switches to simpler stacking nav) */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0.75rem;
-            gap: 0.5rem;
+        padding: 0.5rem;
+        gap: 0.5rem;
     }
-
     .nav-links {
-        margin-top: 10px;
+        flex-direction: column;
+        align-items: flex-start;
         width: 100%;
-        display: flex;
-        flex-direction: auto-fit;
-        gap: 8px;
+        gap: 5px;
     }
-
     .nav-links a {
-        margin-left: 0;   /* Reset margin */
-        font-size: 16px;
-        padding: 8px 0;
-        width: 100%;
-        text-align: Center;
+        font-size: 14px;
+        padding: 5px 0;
     }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .lead {
+        font-size: 1rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+}
 
-    .logo {
-        font-size: 20px;
+/* Tablet-Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
 }
