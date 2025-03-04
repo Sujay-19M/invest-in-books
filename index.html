@@ -17,12 +17,13 @@
         /* Add these styles below existing :root declaration */
         .main-nav {
             background: var(--content-bg);
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             position: relative;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             align-items: center;
             top: 0;
             z-index: 100;
+            display: flex;
         }
 
 }
@@ -147,7 +148,8 @@
     .nav-container {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+        padding: 0.75rem;
+            gap: 0.5rem;
     }
 
     .nav-links {
@@ -163,8 +165,7 @@
         font-size: 16px;
         padding: 8px 0;
         width: 100%;
-        text-align: left;
-        border-bottom: 1px solid #ddd;  /* Optional - separator for better touch */
+        text-align: center;
     }
 
     .logo {
@@ -293,6 +294,19 @@
             </div>
             <a href="/blog" class="see-all">View All Blog Posts →</a>
         </section>
+        
+        <section class="subscribe-box">
+    <div class="invest-in-books-subscribe">
+        <h2>Join Our Bookish Community!</h2>
+        <p>Subscribe to <strong>Invest In Books</strong> and get book recommendations, reading hacks, and expert insights delivered straight to your inbox.</p>
+        <form action="https://gmail.us9.list-manage.com/subscribe/post?u=7b458e28bb7e60aee38bfec51&id=358b9a3f53" method="post" target="_blank" novalidate>
+            <input type="email" name="EMAIL" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe Now</button>
+        </form>
+        <small>We respect your privacy. No spam ever.</small>
+    </div>
+</section>
+        
     </main>
 
     <!-- Footer -->
@@ -340,5 +354,54 @@
             <p>&copy; 2025 Invest In Books. All rights reserved.</p>
         </div>
     </footer> 
+
+    <style>.invest-in-books-subscribe {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.invest-in-books-subscribe h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.invest-in-books-subscribe p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.invest-in-books-subscribe input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.invest-in-books-subscribe button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.invest-in-books-subscribe button:hover {
+    background-color: #003d80;
+}
+
+</style>
+    
 </body>
 </html>
