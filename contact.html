@@ -113,19 +113,30 @@
             </section>
         </div>
     </main>
+    <div id="footer"></div>
+  <script>
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
     <script>
-        // Load Header and Footer
+        // Enhanced fetch with error handling
         function loadComponent(url, elementId) {
             fetch(url)
-                .then(response => response.text())
-                .then(html => document.getElementById(elementId).innerHTML = html)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.text();
+                })
+                .then(data => document.getElementById(elementId).innerHTML = data)
                 .catch(error => console.error('Error loading component:', error));
         }
-        window.onload = () => {
+
+        // Load components
+        window.addEventListener('DOMContentLoaded', () => {
             loadComponent('/header.html', 'header');
             loadComponent('/footer.html', 'footer');
-        };
+        });
     </script>
-    <div id="footer"></div>
 </body>
 </html>
