@@ -189,10 +189,10 @@ body {
 
 /* Footer */
 .site-footer {
-    background: var(--primary);
+    background: #2A5C82;
     color: white;
     padding: 4rem 2rem 2rem;
-    margin-top: auto;
+    margin-top: 4rem;
 }
 
 .footer-grid {
@@ -206,13 +206,28 @@ body {
 }
 
 .footer-heading {
-    color: var(--secondary);
-    margin-bottom: 1rem;
+    color: #F5A623;
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    width: 100%;
+    text-align: left;
 }
+
+.footer-links {
+            padding-left: 0;
+            list-style: none;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
 .footer-links li {
     margin-bottom: 0.8rem;
+            width: 100%;
+            text-align: left;
+            margin-left: 0;
 }
 
 .footer-links a {
