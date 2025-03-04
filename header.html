@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizontal Scroll Menu</title>
+    <title>Hamburger Menu</title>
     <style>
         * {
             box-sizing: border-box;
@@ -20,47 +20,66 @@
             background-color: white;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 10px 15px;
-            overflow-x: auto;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .nav-links {
-            display: inline-flex;
-            gap: 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-            padding: 8px 12px;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .nav-links a:hover {
-            background-color: #e6f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             font-size: 20px;
             font-weight: bold;
             color: #2A5C82;
-            display: inline-block;
-            margin-right: 15px;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            position: absolute;
+            top: 60px;
+            right: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            padding: 8px 0;
+        }
+
+        .nav-links.show {
+            display: flex;
         }
 
         @media (min-width: 768px) {
-            .main-nav {
+            .hamburger {
+                display: none;
+            }
+            .nav-links {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                overflow: visible;
-                white-space: normal;
+                flex-direction: row;
+                gap: 20px;
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
             }
         }
     </style>
@@ -70,6 +89,11 @@
 <header class="main-header">
     <nav class="main-nav">
         <a href="/" class="logo">Invest In Books</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="nav-links">
             <a href="/">Home</a>
             <a href="/pages/membership.html">Membership</a>
@@ -78,6 +102,12 @@
         </div>
     </nav>
 </header>
+
+<script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    }
+</script>
 
 </body>
 </html>
