@@ -62,79 +62,114 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <style>
+   <style>
         .site-footer {
             background: #2A5C82;
             color: white;
             padding: 3rem 1rem 1rem;
             margin-top: 3rem;
         }
+
         .footer-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .footer-heading {
             color: #F5A623;
             margin-bottom: 1rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
+
         .footer-links {
             padding-left: 0;
             list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem; /* Increased space between links */
         }
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
+
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            font-size: 0.95rem; /* Adjusted for better mobile readability */
             transition: color 0.3s ease;
         }
+
         .footer-links a:hover {
             color: white;
             text-decoration: underline;
         }
+
         .footer-social {
             display: flex;
-            gap: 0.8rem;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
+
         .footer-social a {
             color: white;
             font-size: 1.2rem;
             opacity: 0.8;
             transition: opacity 0.3s ease;
         }
+
         .footer-social a:hover {
             opacity: 1;
         }
+
         .footer-bottom {
             text-align: center;
             padding-top: 1rem;
         }
+
         .footer-copyright {
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Mobile Friendly Adjustments */
+        /* Mobile Friendly Fixes */
         @media (max-width: 768px) {
             .footer-grid {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem; /* More space between sections */
+            }
+
+            .footer-section {
                 text-align: center;
             }
-            .footer-section {
-                margin-bottom: 1.5rem;
+
+            .footer-heading {
+                font-size: 1rem;
             }
+
+            .footer-links {
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .footer-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-links a {
+                font-size: 0.95rem; /* Mobile-optimized font size */
+            }
+
             .footer-social {
                 justify-content: center;
+                gap: 0.8rem;
             }
-            .footer-links li {
-                text-align: center;
+
+            .footer-copyright {
+                font-size: 0.8rem;
             }
         }
     </style>
